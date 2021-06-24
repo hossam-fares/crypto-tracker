@@ -24,11 +24,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: deploy
-      uses: google-github-actions/deploy-cloud-functions@0.5.0
+      uses: google-github-actions/deploy-cloud-functions@v0.5.0
       with:
         name: Crypto-tracker
-        region: 	europe-west1
+        region: europe-west1
         runtime: nodejs14
-        event_trigger_type: providers/cloud.pubsub/eventTypes/topic.publish
-        event_trigger_resource: cron-topic
+        event_trigger_type: google.pubsub.topic.publish
+        event_trigger_resource: projects/crypto-316322/topics/cron-topic
+        event_trigger_service: pubsub.googleapis.com
         credentials: ${{ secrets.gcp_credentials }}

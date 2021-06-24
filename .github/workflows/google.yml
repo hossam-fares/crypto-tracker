@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: deploy
-      uses: google-github-actions/deploy-cloud-functions@main
+      uses: google-github-actions/deploy-cloud-functions@0.5.0
       with:
         name: Crypto-tracker
         region: 	europe-west1

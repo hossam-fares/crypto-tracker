@@ -29,6 +29,7 @@ jobs:
         envkey_BINANCE_KEY: ${{ secrets.BINANCE_KEY }}
         envkey_BINANCE_SECRET: ${{ secrets.BINANCE_SECRET }}
         envkey_GOOGLE_CHAT_KEY: ${{ secrets.GOOGLE_CHAT_KEY }}
+        envkey_MONGO_URI: ${{ secrets.MONGO_URI }}
     - id: deploy
       uses: google-github-actions/deploy-cloud-functions@v0.5.0
       with:

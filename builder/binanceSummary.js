@@ -1,12 +1,12 @@
 const binance = require('../services/binance')
 
 const build = async () => {
-    const accRes = await binance.getAccountSnapshot()
+    const balances = await binance.getAccountBalances()
     let marketSummery = ''
     let accountSummery = ''
     let total = 0
 
-    for (const balance of accRes.snapshotVos[0].data.balances) {
+    for (const balance of balances) {
         if (balance.free == 0) {
             continue
         }

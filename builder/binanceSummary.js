@@ -14,7 +14,7 @@ const build = async () => {
         total += currentPrice
     }
 
-    return `\n\nSummery:\n________\n\n${marketSummery}\n===============\n\n${accountSummery}\n===============\n\nTotal Crypto amount is ${parseInt(total)}$`
+    return `\n\nSummery:\n________\n\n${marketSummery}\n===============\n\n${accountSummery}\n===============\n\nTotal Crypto amount is ${parseInt(total)}$\n===============\n\n`
 }
 
 module.exports = { build }

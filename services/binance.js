@@ -17,25 +17,4 @@ const getAvgPrice = async (coin) => {
     return (await (await fetch(`${getBaseUrl()}/api/v3/avgPrice?symbol=${coin}USDT`, { method: 'GET', headers })).json()).price
 }
 
-const getSummery = async () => {
-    const accRes = await getAccountSnapshot()
-    let marketSummery = ''
-    let accountSummery = '' 
-    let total = 0
-
-    for (const balance of accRes.snapshotVos[0].data.balances) {
-        if (balance.free == 0){
-            continue
-        }
-
-        assetPricePerUnit = await getAvgPrice(balance.asset).catch(() => 0.00)
-        marketSummery += `${balance.asset} => ${assetPricePerUnit}$ \n`
-        const currentPrice = assetPricePerUnit * balance.free
-        accountSummery +=`(${balance.free}) ${balance.asset} => ${parseInt(currentPrice)}$ \n`
-        total += currentPrice
-    }
-
-    return `Summery:\n________\n\n${marketSummery}\n===============\n\n${accountSummery}\n===============\n\nTotal Crypto amount is ${parseInt(total)}$`
-}
-
-module.exports = {getSummery}
+module.exports = {getAccountSnapshot, getAvgPrice}

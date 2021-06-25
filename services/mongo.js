@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 const uri = process.env.MONGO_URI
 const mongo = () => new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const findLastTrackedPrice = async (crypto) =>{
+const findLastTrackedPrice = async (crypto) => {
     const client = await mongo().connect()
     const db = client.db("test")
     const cryptoCollection = db.collection("crypto");
@@ -19,7 +19,7 @@ const insertCryptoPrice = async (crypto, price) => {
     const client = await mongo().connect()
     const db = client.db("test")
     const cryptoCollection = db.collection("crypto");
-    await cryptoCollection.deleteOne({asset: crypto})
+    await cryptoCollection.deleteOne({ asset: crypto })
     await cryptoCollection.insertOne({
         asset: crypto,
         lastTrackedPrice: price
@@ -28,4 +28,4 @@ const insertCryptoPrice = async (crypto, price) => {
     client.close()
 }
 
-module.exports = {findLastTrackedPrice, insertCryptoPrice}
+module.exports = { findLastTrackedPrice, insertCryptoPrice }

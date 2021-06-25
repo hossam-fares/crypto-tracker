@@ -8,8 +8,10 @@
   },
   "dependencies": {
     "@google-cloud/pubsub": "^0.18.0",
+    "@google-cloud/storage": "^5.8.5",
     "crypto-js": "^4.0.0",
     "dotenv": "^10.0.0",
+    "mongodb": "^3.6.9",
     "node-fetch": "2"
   },
   "author": "",

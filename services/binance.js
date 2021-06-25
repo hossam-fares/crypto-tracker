@@ -11,7 +11,7 @@ const getAccountBalances = async () => {
 
     const results = await (await fetch(url, { method: 'GET', headers })).json()
 
-    return results.snapshotVos[0].data.balances
+    return results.snapshotVos[0].data.balances.filter(balance => balance.free > 0)
 }
 
 const getAvgPrice = async (coin) => {

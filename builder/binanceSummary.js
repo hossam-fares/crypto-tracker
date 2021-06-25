@@ -7,10 +7,6 @@ const build = async () => {
     let total = 0
 
     for (const balance of balances) {
-        if (balance.free == 0) {
-            continue
-        }
-
         assetPricePerUnit = await binance.getAvgPrice(balance.asset).catch(() => 0.00)
         marketSummery += `${balance.asset} => ${assetPricePerUnit}$ \n`
         const currentPrice = assetPricePerUnit * balance.free
@@ -18,7 +14,7 @@ const build = async () => {
         total += currentPrice
     }
 
-    return `Summery:\n________\n\n${marketSummery}\n===============\n\n${accountSummery}\n===============\n\nTotal Crypto amount is ${parseInt(total)}$`
+    return `\n\nSummery:\n________\n\n${marketSummery}\n===============\n\n${accountSummery}\n===============\n\nTotal Crypto amount is ${parseInt(total)}$`
 }
 
 module.exports = { build }

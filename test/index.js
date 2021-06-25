@@ -1,9 +1,12 @@
 require('dotenv').config()
 
-const cmd = require('../cmds/sentSummeryCommand')
+const sentSummeryCommand = require('../cmds/sentSummeryCommand')
+const trackPricesCommand = require('../cmds/trackPricesCommand')
 
 const index = async (event, context) => {
-    await cmd.execute()
+    if (await trackPricesCommand.execute()) {
+        await sentSummeryCommand.execute()
+    }
 }
-  
+
 index()

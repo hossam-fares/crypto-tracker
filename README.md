@@ -1,6 +1,6 @@
 # Free binance crypto tracker
 
-  This application can track your binance wallet and sent notification if a specific asset goes up or down more than 10%
+  This application can track your binance wallet and sent notification if a specific asset market price goes up or down more than 10%
   
 ## How can I run the app?
 

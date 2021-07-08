@@ -31,3 +31,10 @@
 As the image above I have depend on only 3 components on GCP, you can fellow [this articale](https://www.cloudsavvyit.com/4975/how-to-run-gcp-cloud-functions-periodically-with-cloud-scheduler/) to do it
 
 
+## How can I build a Ci/CD so when I change the code base it will deploy to the cloud function?
+I'm usuing github flows to do that
+
+  1. Fork this repo
+  2. Update `.github/workflows/google.yml#L36` with your function name
+  3. Add secrets to your github repo [like this](https://stackoverflow.com/questions/57685065/how-to-set-secrets-in-github-actions)
+  4. you can find needed secrets in `.github/workflows/google.yml`

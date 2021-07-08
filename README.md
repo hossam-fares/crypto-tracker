@@ -26,4 +26,8 @@
 
 ## How can I run the app as a cloud function and trigger it every X minutes?
     
-    to be added
+![Blank diagram](https://user-images.githubusercontent.com/1850565/124982411-f482ca00-e036-11eb-9133-c648532479d8.png)
+
+As the image above I have depend on only 3 components on GCP, you can fellow [this articale](https://www.cloudsavvyit.com/4975/how-to-run-gcp-cloud-functions-periodically-with-cloud-scheduler/) to do it
+
+
